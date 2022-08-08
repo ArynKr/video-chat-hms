@@ -4,19 +4,26 @@ import {
   useHMSStore,
   selectIsLocalAudioEnabled,
   selectIsLocalVideoEnabled,
+  selectDevices,
+  selectLocalMediaSettings,
 } from '@100mslive/react-sdk'
 import styles from './ControlBar.module.css'
 
-const ControlBar = () => {
+const ControlBar = ({ settingsOpen, setSettingsOpen }) => {
   const hmsActions = useHMSActions()
   const isLocalAudioEnabled = useHMSStore(selectIsLocalAudioEnabled)
   const isLocalVideoEnabled = useHMSStore(selectIsLocalVideoEnabled)
+
   const toggleAudio = async () => {
     await hmsActions.setLocalAudioEnabled(!isLocalAudioEnabled)
   }
 
   const toggleVideo = async () => {
     await hmsActions.setLocalVideoEnabled(!isLocalVideoEnabled)
+  }
+
+  const openSettings = () => {
+    setSettingsOpen(!settingsOpen)
   }
 
   return (
@@ -40,7 +47,7 @@ const ControlBar = () => {
       <button className={styles.btn} onClick={toggleVideo}>
         {isLocalVideoEnabled ? 'Hide' : 'Unhide'}
       </button>
-      <button className={styles.btn} onClick={toggleVideo}>
+      <button className={styles.btn} onClick={openSettings}>
         Settings
       </button>
     </div>
