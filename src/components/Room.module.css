@@ -1,0 +1,11 @@
+.room {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin-top: 2rem;
+  width: 90%;
+  margin-inline: auto;
+}

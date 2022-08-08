@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  margin: 1;
+}
+
+.relative {
+  position: relative;
+}
+
+.video {
+  object-fit: cover; 
+  width: 16rem; 
+  height: 16rem; 
+  border-radius: 0.5rem; 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+}
+
+.nameContainer {
+  display: flex; 
+  position: absolute; 
+  top: 0; 
+  justify-content: center; 
+  width: 100%; 
+}
+
+.name {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem; 
+  padding-left: 0.5rem;
+  padding-right: 0.5rem; 
+  margin-top: 0.5rem; 
+  margin-left: 0.5rem; 
+  background-color: #6B7280; 
+  color: #ffffff; 
+  font-size: 0.875rem;
+  line-height: 1.25rem; 
+  border-radius: 0.5rem; 
+}
