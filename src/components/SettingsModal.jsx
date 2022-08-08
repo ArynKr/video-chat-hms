@@ -28,6 +28,7 @@ const SettingsModal = ({ settingsOpen, setSettingsOpen }) => {
             <select
               name="camera"
               id="camera"
+              value={selected.videoInputDeviceId}
               onChange={(e) =>
                 hmsActions.setVideoSettings({ deviceId: e.target.value })
               }
@@ -42,6 +43,7 @@ const SettingsModal = ({ settingsOpen, setSettingsOpen }) => {
           <div className={styles.labelSelect}>
             <label htmlFor="microphone">Microphone</label>
             <select
+              value={selected.audioInputDeviceId}
               name="mic"
               id="mic"
               onChange={(e) =>
@@ -58,6 +60,7 @@ const SettingsModal = ({ settingsOpen, setSettingsOpen }) => {
           <div className={styles.labelSelect}>
             <label htmlFor="audio">Audio Output</label>
             <select
+              value={selected.audioOutputDeviceId}
               name="audio"
               id="audio"
               onChange={(e) => hmsActions.setAudioOutputDevice(e.target.value)}
@@ -70,7 +73,7 @@ const SettingsModal = ({ settingsOpen, setSettingsOpen }) => {
             </select>
           </div>
           <button onClick={() => setSettingsOpen(false)} className={styles.btn}>
-            Save
+            Close
           </button>
         </form>
       </div>
